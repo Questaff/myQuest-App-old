@@ -1,0 +1,7 @@
+{
+  "name": "myQuest",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
