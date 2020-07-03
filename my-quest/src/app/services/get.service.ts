@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class GetService {
 
-  url: string = "http://127.0.0.1/projet/back";
+  url: string = "";
 
   constructor(
     private http:HttpClient
