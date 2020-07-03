@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Liste des réponses de la quête</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let name of myObject">
+    <ion-label>La personne suivante : {{ name.username }}, a fini la quête</ion-label>
+    <ion-button (click)="openAccept(name.username)">Accepter</ion-button>
+    <ion-button (click)="openRefuse(name.username)">Refuser</ion-button>
+  </div>
+</ion-content>

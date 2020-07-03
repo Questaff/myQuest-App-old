@@ -1,0 +1,46 @@
+.form-content {
+    display: flex;
+}
+
+.form-input {
+    flex: 1;
+}
+
+::ng-deep .form-content ion-button {
+    margin: 0;
+    --border-radius: 0;
+    height: auto;
+}
+
+ion-card-header {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.quest-title {
+    text-transform: uppercase;
+    padding: 0;
+    text-overflow: initial;
+}
+
+.quest-content {
+    padding: 10px 0;
+}
+
+.quest-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    align-items: center;
+}
+
+.quest-user {
+
+}
+
+.quest-date {
+
+}
+
+.quest-like {
+    
+}

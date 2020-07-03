@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Quêtes</ion-title>
+  </ion-toolbar>
+
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+        <div class="form-ctn">
+          <form [formGroup]="questForm" (ngSubmit)="submitQuest()" class="form-content">
+            <div class="form-input">
+              <ion-item>
+                <ion-input type="text" formControlName="title" placeholder="Titre"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input type="text" formControlName="content" placeholder="Contenu"></ion-input>
+              </ion-item>
+            </div>
+            <ion-button [disabled]="!questForm.valid" type="submit" color="success" shape="square"><ion-icon name="add-outline"></ion-icon></ion-button>
+          </form>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12" size-md="6" *ngFor="let quest of result">
+        <ion-card>
+          <ion-card-header>
+            <!-- <img src="{{ quest.img }}"> -->
+            <ion-title class="quest-title" size="small" text-wrap>
+              {{ quest.title }}
+            </ion-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p class="quest-content">
+              {{ quest.content }}
+            </p>
+            <div class="quest-footer">
+              <div class="left">
+                <p class="quest-user">
+                  <ion-icon name="person-outline"></ion-icon> : {{ quest.username }}
+                </p>
+                <p class="quest-date">
+                  <ion-icon name="calendar-outline"></ion-icon> : {{ quest.date | date:'dd/MM/yyyy'}}
+                </p>
+                <p class="quest-like">
+                  <ion-icon name="heart"></ion-icon> : 5
+                </p>
+              </div>
+              <div class="right">
+                <ion-button (click)="openAccept(quest.id)" color="dark">
+                  Accepter
+                </ion-button>
+              </div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

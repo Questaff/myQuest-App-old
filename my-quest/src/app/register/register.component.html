@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Inscription</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="content">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12">
+          <ion-card>
+            <ion-card-content>
+              <div *ngFor="let i of errorMsg">
+                <div *ngIf="error" class="error">{{ i.message }}</div>
+              </div>
+
+              <div *ngIf="success">
+                <div>Votre compte a été crée, veuillez-vous connecter <a href="login">ici</a></div>
+              </div>
+
+              <div *ngIf="form">
+                <form [formGroup]="registerForm" (ngSubmit)="submitRegister()">
+                  <ion-item>
+                    <ion-input type="text" formControlName="lname" placeholder="Nom"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-input type="text" formControlName="fname" placeholder="Prénom"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-input type="mail" formControlName="mail" placeholder="Email"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-input type="mail" formControlName="cmail" placeholder="Confirmation d'email"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-input type="text" formControlName="username" placeholder="Pseudo"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-input type="password" formControlName="pass" placeholder="Mot de passe"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-input type="password" formControlName="cpass" placeholder="Confirmation de mot de passe"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-input type="tel" formControlName="phone" placeholder="Téléphone"></ion-input>
+                  </ion-item>
+                  <ion-button [disabled]="!registerForm.valid" type="submit" color="dark">S'enregistrer</ion-button>
+                </form>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
