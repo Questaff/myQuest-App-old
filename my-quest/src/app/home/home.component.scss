@@ -1,0 +1,42 @@
+.content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 100px);
+    flex: wrap;
+    flex-direction: column;
+}
+
+.content .title-ctn {
+    padding-bottom: 30%;
+}
+
+.title {
+    text-align: center;
+    font-size: 72px;
+}
+
+.content .btn-ctn {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex: wrap;
+    width: 100%;
+}
+
+.content ::ng-deep ion-button {
+    width: 250px;
+}
+
+.content .legal {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+}
+
+.content .legal a{
+    display: block;
+    text-decoration: none;
+    color: var(--ionic-dark-color);
+}

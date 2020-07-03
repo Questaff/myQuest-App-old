@@ -1,3 +1,29 @@
-<p>
-  home works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+        <div class="content">
+          <div class="title-ctn">
+            <h1 class="title">MyQuest</h1>
+          </div>
+          <div class="btn-ctn">
+            <ion-button (click)="redirectionRegister()" size="large" color="dark">Register</ion-button>
+            <ion-button (click)="redirectionLogin()" size="large" color="dark">Login</ion-button>
+          </div>
+          <div class="legal">
+            <a href="#">CGU</a>
+            <a href="#">Mentions légales</a>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
