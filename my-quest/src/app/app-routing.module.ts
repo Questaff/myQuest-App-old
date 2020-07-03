@@ -1,16 +1,42 @@
+import { ResponseComponent } from './response/response.component';
+import { AcceptedComponent } from './accepted/accepted.component';
+import { SettingComponent } from './setting/setting.component';
+import { FeedComponent } from './feed/feed.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox',
-    pathMatch: 'full'
+    component: HomeComponent
   },
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
-  }
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
+  },
+  {
+    path: 'quest',
+    component: FeedComponent
+  },
+  {
+    path: 'setting',
+    component: SettingComponent
+  },
+  {
+    path: 'myQuests',
+    component: AcceptedComponent
+  },
+  {
+    path: 'qestsResponse',
+    component: ResponseComponent
+  },
 ];
 
 @NgModule({
