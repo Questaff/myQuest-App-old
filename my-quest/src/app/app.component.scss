@@ -49,6 +49,14 @@ ion-menu.md ion-item {
   border-radius: 4px;
 }
 
+// ion-menu.md ion-item.selected {
+//   --background: rgba(var(--ion-color-primary-rgb), 0.14);
+// }
+
+// ion-menu.md ion-item.selected ion-icon {
+//   color: var(--ion-color-primary);
+// }
+
 ion-menu.md ion-item ion-icon {
   color: #616e7e;
 }
@@ -76,6 +84,10 @@ ion-menu.ios ion-item {
   --min-height: 50px;
 }
 
+// ion-menu.ios ion-item.selected ion-icon {
+//   color: var(--ion-color-primary);
+// }
+
 ion-menu.ios ion-item ion-icon {
   font-size: 24px;
   color: #73849a;
@@ -101,3 +113,7 @@ ion-note {
 
   color: var(--ion-color-medium-shade);
 }
+
+// ion-item.selected {
+//   --color: var(--ion-color-primary);
+// }

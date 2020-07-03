@@ -1,13 +1,8 @@
 {
   "appId": "io.ionic.starter",
-  "appName": "myQuest",
+  "appName": "myApp",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
-  "plugins": {
-    "SplashScreen": {
-      "launchShowDuration": 0
-    }
-  },
   "cordova": {}
 }

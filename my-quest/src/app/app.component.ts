@@ -1,8 +1,10 @@
+import { PostService } from './services/post.service';
 import { Component, OnInit } from '@angular/core';
 
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +12,14 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent implements OnInit {
+  showFirstMenu : boolean = true;
+  showSndMenu : boolean = false;
+  data: Object = {
+    tokenUser: null,
+    action: null
+  }
+  result: any;
+
   public selectedIndex = 0;
   public appPages = [
     {
@@ -48,7 +58,9 @@ export class AppComponent implements OnInit {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private router:Router,
+    private PostService:PostService
   ) {
     this.initializeApp();
   }
@@ -68,6 +80,29 @@ export class AppComponent implements OnInit {
       this.showFirstMenu = false;
       this.showSndMenu = true;
     }
+  }
+
+  checkTokenConnect() {
+    if (localStorage.getItem('token') == null) {
+      this.router.navigate(['']);
+      this.showMenu();
+    } else {
+      this.validToken();
+    }
+  }
+
+  validToken() {
+    this.data['token'] = localStorage.getItem('token');
+    this.data['action'] = "checkToken";
+
+    this.PostService.postData(this.data).subscribe(response => {
+      this.result = response;
+      if (this.result["success"] == false) {
+        localStorage.removeItem('token');
+        this.router.navigate(['']);
+        this.showMenu();
+      }
+    });
   }
 
   ngOnInit() {

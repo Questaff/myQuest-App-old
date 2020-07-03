@@ -1,0 +1,55 @@
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.btn {
+    margin-top: 40px;
+}
+
+.error {
+    color: red;
+    text-align: center;
+    font-size: 30px;
+}
+
+ion-card {
+    max-width: 600px;
+    margin: auto;
+    padding: 40px 40px;
+    box-shadow: rgba(66, 66, 66, 0.5) 0px 0px 7px 2px;
+}
+
+ion-item {
+    --background: rgba(66, 66, 66, 0.1);
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+ion-item:first-child {
+    margin: 0;
+}
+
+ion-button {
+    width: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+    ion-card {
+        box-shadow: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        align-items: flex-start;
+    }
+}
+
+@media (max-height: 650px) {
+    .content {
+        align-items: flex-start;
+    }
+}

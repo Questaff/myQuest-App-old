@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from '../app.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-setting',
@@ -7,8 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private AppComponent:AppComponent,
+    private router:Router,
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.AppComponent.checkTokenConnect();
+  }
+
+  deco() {
+    localStorage.removeItem('token');
+    this.AppComponent.showMenu();
+    this.router.navigate(['']);
+  }
 
 }

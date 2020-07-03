@@ -1,3 +1,56 @@
-<p>
-  accepted works!
-</p>
+<ion-content>
+  <!-- <ion-slides>
+    <ion-slide> -->
+      <ion-title>Mes quêtes acceptées</ion-title>
+      <div *ngFor="let quest of questAccept">
+        <ion-card>
+          <ion-card-header>
+            <!-- <img src="{{ quest.img }}"> -->
+            <ion-title>
+              {{ quest.title }}
+            </ion-title>
+            <ion-label>
+              {{ quest.date }}
+            </ion-label>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-label>
+              {{ quest.content }}
+            </ion-label>
+            <br>
+            <ion-label>
+              par {{ quest.username }}
+            </ion-label>
+          </ion-card-content>
+          <ion-button (click)="openFinish(quest.id)" type="submit">Terminer</ion-button>
+          <ion-button (click)="openCancel(quest.id)" type="submit">Annuler</ion-button>
+        </ion-card>
+      </div>
+</ion-content>
+<ion-content>
+    <!-- </ion-slide>
+    <ion-slide> -->
+      <ion-title>Mes quêtes crées</ion-title>
+      <div *ngFor="let quest of myQuest">
+        <ion-card>
+          <ion-card-header>
+            <!-- <img src="{{ quest.img }}"> -->
+            <ion-title>
+              {{ quest.title }}
+            </ion-title>
+            <ion-label>
+              {{ quest.date }}
+            </ion-label>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-label>
+              {{ quest.content }}
+            </ion-label>
+          </ion-card-content>
+          <ion-button (click)="response(quest.id)" type="submit">Voir les résultats</ion-button>
+          <ion-button (click)="openAlert(quest.id)">Supprimer</ion-button>
+        </ion-card>
+      </div>
+    <!-- </ion-slide>
+  </ion-slides> -->
+</ion-content>

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,10 @@ import { Injectable } from '@angular/core';
 })
 export class GetService {
 
-  constructor() { }
+  url: string = "http://127.0.0.1/projet/back";
+
+  constructor(
+    private http:HttpClient
+  ) { }
+
 }

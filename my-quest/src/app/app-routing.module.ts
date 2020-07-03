@@ -1,12 +1,12 @@
 import { ResponseComponent } from './response/response.component';
-import { AcceptedComponent } from './accepted/accepted.component';
-import { SettingComponent } from './setting/setting.component';
 import { FeedComponent } from './feed/feed.component';
+import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { SettingComponent } from './setting/setting.component';
+import { AcceptedComponent } from './accepted/accepted.component';
 
 const routes: Routes = [
   {
